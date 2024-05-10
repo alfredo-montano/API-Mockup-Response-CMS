@@ -64,7 +64,7 @@ namespace MockupResponseCMS.API.Controllers
             catch (Exception ex)
             {
                 response.Success = false;
-                response.Message = "Error";
+                response.Message = $"Error: {ex.Message}";
                 return response;
             }
         }
@@ -100,7 +100,7 @@ namespace MockupResponseCMS.API.Controllers
             catch (Exception ex)
             {
                 response.Success = false;
-                response.Message = "Error";
+                response.Message = $"Error: {ex.Message}";
                 return response;
             }
         }
