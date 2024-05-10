@@ -40,6 +40,11 @@ namespace MockupResponseCMS.API.Controllers
             try
             {
 
+                if ((requestDto.CardNumber == null || requestDto.CardNumber == "") || (requestDto.ExpirationDate == null || requestDto.ExpirationDate == "") || (requestDto.PinBlock == null || requestDto.PinBlock == "")) 
+                {
+                    throw new Exception($"Request no valido para procesar");
+                }
+
                 CMSCortexAsigPinResponse result = new()
                 {
                     ExpDate = "11/27",
@@ -71,6 +76,10 @@ namespace MockupResponseCMS.API.Controllers
             var response = new BaseCommandResponse();
             try
             {
+                if ((requestDto.CardNumber == null || requestDto.CardNumber == "") || (requestDto.ExpirationDate == null || requestDto.ExpirationDate == "") || (requestDto.PinBlock == null || requestDto.PinBlock == ""))
+                {
+                    throw new Exception($"Request no valido para procesar");
+                }
 
                 CMSCortexAsigPinResponse result = new()
                 {
